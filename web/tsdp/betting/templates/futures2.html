@@ -1,0 +1,45 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+{% load tags %}
+
+{%  block head %}
+    <title>Overview</title>
+{% endblock %}
+
+{% block content %}
+<base href="/">
+<ul><center><h1>Account Values</h1></center><br><center>
+<center><a href="static/images/{{ date }}_comparison_account_value.png"><img src="static/images/{{ date }}_comparison_account_value.png"  width=800 height=800></a></center>
+<center><a href="static/public/images/{{ date }}_v4mini_c2_account_value.png"><img src="static/public/images/{{ date }}_v4mini_c2_account_value.png"  width=800 height=800></a></center>
+<center><a href="static/public/images/{{ date }}_v4futures_ib_account_value.png"><img src="static/public/images/{{ date }}_v4futures_ib_account_value.png"  width=800 height=800></a></center>
+<center><a href="static/public/images/{{ date }}_v4micro_c2_account_value.png"><img src="static/public/images/{{ date }}_v4micro_c2_account_value.png"  width=800 height=800></a></center>
+
+<ul><center><h1>3-5 Day Historical Overview</h1></center><br><center>
+<center><a href="static/images/{{ accounts|get_item:"v4futures"}}_DayAveragesbyGroup.png"><img src="static/images/{{ accounts|get_item:"v4futures"}}_DayAveragesbyGroup.png"  width=800 height=800></a></center>
+<center><a href="static/images/{{ accounts|get_item:"v4futures"}}_DayVolatilitybyGroup.png"><img src="static/images/{{ accounts|get_item:"v4futures"}}_DayVolatilitybyGroup.png"  width=800 height=800></a></center>
+<center><a href="static/images/{{ accounts|get_item:"v4futures"}}_DayChangebyGroup.png"><img src="static/images/{{ accounts|get_item:"v4futures"}}_DayChangebyGroup.png"  width=800 height=800></a></center>
+<center><a href="static/images/{{ accounts|get_item:"v4futures"}}_LongPercentbyGroup.png"><img src="static/images/{{ accounts|get_item:"v4futures"}}_LongPercentbyGroup.png"  width=800 height=800></a></center>
+
+{% for name, date2 in accounts.items %}
+    <center><h1>{{ name }}</h1></center><br><center>
+    <center><a href="static/public/images/{{ date }}_{{ name }}_RiskOn_ranking.png"><img src="static/public/images/{{ date }}_{{ name }}_RiskOn_ranking.png"  width=900 height=1800></a></center>
+    <center><a href="static/images/{{ date2 }}_{{ name }}_DayAccuracybySystem.png"><img src="static/images/{{ date2 }}_{{ name }}_DayAccuracybySystem.png"  width=900 height=1800></a></center>
+    <center><a href="static/images/{{ date2 }}_{{ name }}_Day$PNLbySystem.png"><img src="static/images/{{ date2 }}_{{ name }}_Day$PNLbySystem.png"  width=900 height=1800></a></center>
+{% endfor %}
+
+{% if not archive %}
+    <center><h1>Market Heatmaps</h1></center><br><center>
+    <center><a href="{% static 'images/futures_2.png' %}"><img src="{% static 'images/futures_2.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/futures_3.png' %}"><img src="{% static 'images/futures_3.png' %}"  width=800 height=800></a></center>
+    <center><h1>Custom Signals</h1></center><br><center>
+    <center><a href="{% static 'images/custom_currency.png' %}"><img src="{% static 'images/custom_currency.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/custom_energy.png' %}"><img src="{% static 'images/custom_energy.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/custom_grain.png' %}"><img src="{% static 'images/custom_grain.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/custom_index.png' %}"><img src="{% static 'images/custom_index.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/custom_meat.png' %}"><img src="{% static 'images/custom_meat.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/custom_metal.png' %}"><img src="{% static 'images/custom_metal.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/custom_rates.png' %}"><img src="{% static 'images/custom_rates.png' %}"  width=800 height=800></a></center>
+    <center><a href="{% static 'images/custom_soft.png' %}"><img src="{% static 'images/custom_soft.png' %}"  width=800 height=800></a></center>
+{% endif %}
+
+{% endblock %}

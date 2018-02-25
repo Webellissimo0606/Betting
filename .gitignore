@@ -1,0 +1,6 @@
+web/betsys/node_modules/
+web/betsys/app/**/*.js
+web/betsys/dist/
+web/tsdp/*.sqlite3
+web/tsdp/**/*.png
+web/tsdp/**/*.pyc

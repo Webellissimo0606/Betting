@@ -1,0 +1,826 @@
+@charset "utf-8";
+
+/* --------------- for drag and drop --------------- */
+body {
+	background: #F1F1F1;
+	min-width: 768px;
+}
+
+
+/* --------------- for navigation pane --------------- */
+.header {
+	background: #337AB7;
+	color: #fff;
+	height: 80px;
+	width: 100%;
+	box-shadow: 4px 5px 4px #7D7D7D;
+}
+
+.header .user-avatar {
+	border: 2px solid #efefef;
+	border-radius: 8px;
+	width: 60px;
+	height: 60px;
+}
+
+.header .left-pane {
+	height: 100%;
+	width: 50%;
+	float: left;
+}
+
+.header .right-pane {
+	height: 100%;
+	width: 50%;
+	float: right;
+}
+
+.header .left-pane .user-avatar {
+	margin: 10px;
+	float: left;
+}
+
+.header .left-pane .user-avatar img{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	background: cadetblue;
+}
+
+.header .left-pane .user-info {
+	margin-top: 25px;
+	width: 100%;
+}
+
+/* --------------- for main body --------------- */
+.container {
+	padding: 5px;
+	padding-top: 10px;
+	height: 96%;
+	width: 100%;
+	min-height: 1350px;
+	min-width: 768px;
+}
+
+.container .bet-info-pane {
+	width: 100%;
+	height: 22%;
+	padding: 2px;
+	border-radius: 7px;
+	background-color: white;
+	box-shadow: 1px 1px 8px 0px #2B2B2B;
+	margin-bottom: 20px;
+}
+
+.table-control-pane {
+	width: 100%;
+	padding: 20px;
+	display: table;
+}
+
+.trigger-pane {
+	font-family: serif;
+	font-size: 18px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	float: left;
+	width:90%;
+}
+
+.db-control-pane {
+	font-family: sans-serif;
+	float: right;
+	padding-right: 30px;
+	width:10%;
+}
+
+/* --------------- for info table --------------- */
+.container .bet-info-table {
+	width: 100%;
+	height: 100%;
+	border: 1px dashed white;
+	background: white;
+}
+
+.container .bet-info-table .info-table-header {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: bolder;
+	border: 1px dotted black;
+	text-align: center;
+}
+
+.container .bet-info-table .info-table-row {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 14px;
+	border: 1px dotted black;
+}
+
+.container .bet-info-table .info-table-row td {
+	padding: 0;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.gradient {
+	height: 40px;
+    text-shadow: 1px 1px 1px #236C8F;
+    border: 2px solid rgba(0, 140, 255, 0.49);
+	font-size: 16px;
+	border-radius: 10px;
+    background: -webkit-gradient( linear, left bottom, left top, color-stop(0.02, rgb(232,242,255)), color-stop(0.51, rgb(117,198,255)), color-stop(0.87, rgb(232,242,255)) );
+    background: -moz-linear-gradient( center bottom, rgb(232,242,255) 2%, rgb(117,198,255) 51%, rgb(232,242,255) 87% );
+}
+
+.chip-avatar {
+	display: table-cell;
+	float: left;
+}
+
+.chip-button {
+	cursor: pointer;
+	display: table-cell;
+	float: right;
+}
+
+.chip-img {
+	width: 40px;
+}
+
+.chip-avatar-text {
+	position: absolute;
+	width: 28px;
+	font-size: 11px;
+	font-family: serif;
+	font-weight: bold;
+	margin-top: 13px;
+	margin-left: 7px;
+	text-align: center;
+	color: black;
+}
+
+.chip-text {
+	height: 40px;
+    text-shadow: 1px 1px 1px grey;
+	padding-left: 5px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+/* --------------- for dragging item --------------- */
+.drag-item-container {
+	border: 1px dashed cornflowerblue;
+	border-radius: 20px 0 0 20px;
+	display: inline-block;
+	margin-top: -95px;
+	margin-right: 2px;
+}
+
+.drag-item {
+	width: 60px;
+	height: 50px;
+	margin: 0;
+	padding-left: 5px;
+	border-color: transparent;
+	background: transparent;
+}
+
+.account-item-body {
+	width: 50px;
+	height: 50px;
+	background-size: 50px 50px;
+	display: table-cell;
+	font-family: monospace;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.account-item-text {
+	position: absolute;
+	margin-left: 12px;
+	width: 33px;
+	text-align: center;
+}
+
+.account-item-img {
+	width: 100%;
+	margin-top: -20px;
+}
+
+/* --------------- for main body --------------- */
+.container .betting-box {
+	width: 100%;
+	height: 76%;
+	margin: auto;
+	box-shadow: 1px 1px 8px 0px #2B2B2B;
+	border-radius: 7px;
+	background-color: wheat;
+}
+
+.container .betting-box .time-pane {
+	width: 100%;
+	height: 46px;
+	background: tan;
+	border-radius: 7px 7px 0 0;
+	padding: 6px;
+}
+
+.container .betting-box .time-pane .time-text {
+	font-size: 16px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	float: left;
+	padding-top: 6px;
+}
+
+.container .betting-box .time-pane .btn {
+	float: left;
+	margin-right: 1%;
+	border-radius: 30px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container .betting-box .betting-content {
+	width: 100%;
+	height: 100%;
+	padding: 2px;
+	padding-top: 5px;
+	margin: auto;
+	border-radius: 0 0 7px 7px;
+}
+
+.bet-table-left-pane {
+	width: 66px;
+	height: 320px;
+	float: left;
+}
+
+.bet-table-left-panel {
+	width: 100%;
+	height: 100%;
+	margin-right: 2px;
+	border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-right: 66px solid green;
+	/*background-image: url('static/public/images/left_pane_bg.png');*/
+	background-size: 100% 320px;
+	color: black;
+	font-family: fantasy;
+	font-size: 26px;
+	text-align: right;
+}
+
+.bet-table-header-panel {
+	margin-left: 66px;
+	width: 100%;
+	height: 40px;
+}
+
+.bet-table-header-col1 {
+	width: 6%;
+	height: 40px;
+	background: black;
+	color: white;
+	float: left;
+	border: 1px solid white;
+}
+
+.bet-table-header-col0 {
+	width: 6%;
+	height: 40px;
+	background: #C1272D;
+	color: white;
+	float: left;
+	border: 1px solid white;
+}
+
+.bet-table-col1 {
+	width: 6%;
+	height: 240px;
+	background: black;
+	color: white;
+	float: left;
+	border: 1px solid white;
+}
+
+.bet-table-col0 {
+	width: 6%;
+	height: 240px;
+	background: #C1272D;
+	color: white;
+	float: left;
+	border: 1px solid white;
+}
+
+.bet-cell {
+	width: 100%;
+	height: 80px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	text-align: center;
+	display: table;
+	vertical-align: middle;
+}
+
+.bet-cell-caption {
+	width: 100%;
+	font-size: 30px;
+	margin-top:18px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.bet-table-right-pane {
+	width: 10%;
+	height: 240px;
+	background: white;
+	color: black;
+	font-family: fantasy;
+	font-size: 20px;
+	float: left;
+	border: 1px solid black;
+}
+
+.pane-cell {
+	width: 100%;
+	height: 80px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.pane-cell-caption {
+	width: 100%;
+	height: 35px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	display: table;
+	line-height: 90%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.bet-table-bottom-section {
+	height: 80px;
+	margin-top: 240px;
+	background: transparent;
+}
+
+.pane-bottom-cell-blank {
+	width: 8%;
+	height: 80px;
+	float: left;
+}
+
+.bet-table-bottom-pane {
+	width: 72%;
+	height: 80px;
+	float: left;
+	font-family: fantasy;
+	background: transparent;
+	color: white;
+	border: 1px solid black;
+}
+
+.bottom-cell {
+	width: 16.666%;
+	height: 80px;
+	float: left;
+	background: white;
+	border: 1px solid black;	
+}
+
+/*---------------- bet risk pane -------------------*/
+.bet-risk {
+	width: 24%;
+	height: 80px;
+	border: 3px solid black;
+	margin: auto;
+	margin-top: 1%;
+	color: white;
+	font-size: 20px;
+}
+
+.bet-risk-cell-1 {
+	width: 50%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.bet-risk-cell-0 {
+	width: 50%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.risk-cell-caption {
+	width: 100%;
+	height: 35px;
+	font-size: 20px;
+	display: table;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*---------------- bet rearray pane -------------------*/
+.bet-cond-pane {
+	width: 100%;
+	height: 160px;
+	padding: 20px;
+	background:transparent;
+}
+
+/*---------------- bet risk pane -------------------*/
+.bet-recent-pane {
+	width: 100%;
+	height: 230px;
+	margin-top: 10px;
+	padding: 5px;
+	border-radius: 4px;
+	background: white;
+	clear: both;
+}
+
+.bet-recent-pane .bet-recent-table {
+	width: 100%;
+	height: 100%;
+	border: 1px dashed white;
+	background: white;
+}
+
+.bet-recent-pane .bet-recent-table th {
+	text-align: center;
+    border: 2px solid grey;
+}
+
+.bet-recent-pane .bet-recent-table td {
+	border: 1px solid grey;
+    height: 30px;
+    text-align: center;
+}
+
+.bet-column-highlight {
+	background-color: skyblue;
+}
+
+.bet-recent-pane .bet-recent-table .recent-table-header {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.recent-text {
+	font-size: 15px;
+	font-weight: lighter;
+	padding-left: 5px;
+}
+
+/*---------------- drag -------------------*/
+.dnd-drag-start {
+	transform: scale(0.8);
+	opacity: 0.7;
+}
+
+.dnd-drag-over {
+	border: 2px dashed lightcoral;
+}
+
+/*---------------- chart dialog -------------------*/
+.chart-pane {
+	position: absolute;
+	top: 80px;
+    max-width: 720px;
+    height: 650px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 1px 0 6px 0 #000;
+    background: #d9edf7;
+    z-index: 1000;
+}
+
+.chart-pane-header {
+	height: 40px;
+    border: 2px solid rgba(0, 140, 255, 0.49);
+	font-size: 16px;
+	border-radius: 10px 10px 0 0;
+    background: -webkit-gradient( linear, left bottom, left top, color-stop(0.02, rgb(181,210,230)), color-stop(0.51, rgb(177,207,228)), color-stop(0.87, rgb(232,242,255)) );
+    background: -moz-linear-gradient( center bottom, rgb(181,210,230) 2%, rgb(177,207,228) 51%, rgb(232,242,255) 87% );
+	cursor: move;
+}
+
+.chart-pane-header-top {
+	width: 100%;
+	height: 40px;
+}
+
+.chart-pane-header-bottom {
+	width: 100%;
+	margin-top: 10px;
+	height: 36px;
+}
+
+.chart-icon {
+	height: 36px;
+	float: left;
+}
+
+.chart-icon-text {
+	position: absolute;
+	width: 28px;
+	font-size: 11px;
+	font-family: serif;
+	font-weight: bold;
+	margin-top: 11px;
+	margin-left: 4px;
+	text-align: center;
+	color: black;
+}
+
+.chart-title-text {
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+}
+
+.chart-close-btn {
+	cursor: pointer;
+	height: 25px;
+	width: 25px;
+	padding-left: 5px;
+	padding-top: 1px;
+	/*border: 1px solid #2283c7;
+	border-radius: 6px;
+	color: #2283c7;*/
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
+.chart-close-btn:active {
+	/*border: 2px solid #7b9db5;
+	color: #7b9db5;*/
+}
+
+.chart-close-text {
+    text-shadow: 1px 1px 1px #236C8F;
+}
+
+.chart-pane-tab-bar {
+	display: block;
+}
+
+.chart-pane-tab {
+	float: left;
+	text-align: center;
+	width: 100px;
+	height: 36px;
+	margin-left: 2px;
+	background: black;
+	padding: 5px;
+	font-size: 20px;
+	border-radius: 10px 10px 0 0;
+    background: -webkit-gradient( linear, left bottom, left top, color-stop(0.02, rgb(72,154,210)), color-stop(0.51, rgb(70,158,220)), color-stop(0.87, rgb(232,242,255)) );
+    background: -moz-linear-gradient( center bottom, rgb(181,210,230) 2%, rgb(177,207,228) 51%, rgb(232,242,255) 87% );
+	box-shadow: 0 -1px 5px 0;
+	cursor: pointer;
+	min-width: 150px;
+}
+
+.chart-pane-tab-on {
+    background: -webkit-gradient( linear, left bottom, left top, color-stop(0.02, rgb(210,180,140)), color-stop(0.51, rgb(245,222,180)), color-stop(0.87, rgb(232,242,255)) );
+    background: -moz-linear-gradient( center bottom, rgb(181,210,230) 2%, rgb(177,207,228) 51%, rgb(232,242,255) 87% );
+}
+
+.chart-tab-icon {
+	margin-top: -5px;
+	height: 36px;
+}
+
+.chart-tab-icon-text {
+	position: absolute;
+	width: 28px;
+	font-size: 11px;
+	font-family: serif;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-left: 4px;
+	text-align: center;
+	color: black;
+}
+
+.chart-pane-body {
+	text-align: center;
+	overflow-y: scroll;
+	height: 610px;
+	width: 100%;
+}
+
+.chart-pane-body-text {
+	font-size: 20px;
+	padding: 15px;
+	padding-bottom: 0px;
+	text-align: left;
+}
+
+.chart-img {
+	width: 700px;
+}
+
+.chart-button {
+	position: absolute;
+	cursor: pointer;
+}
+
+.chart-button-img {
+	width: 26px;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*---------------- test -------------------*/
+.test-panel {
+	padding: 10px;
+	width: 100%;
+	height: 400px;
+	background-color: white;
+	border-radius: 7px;
+	box-shadow: 1px 1px 8px 0px #2B2B2B;
+}
+
+.test-panel1 {
+	float: left;
+	width: 15%;
+	height: 100%;
+	background-color: white;
+	border-radius: 7px;
+	box-shadow: 1px 1px 8px 0px #2B2B2B;
+	word-wrap: break-word;
+}
+
+.test-panel2 {
+	float: right;
+	width: 84%;
+	height: 100%;
+	background-color: white;
+	border-radius: 7px;
+	box-shadow: 1px 1px 8px 0px #2B2B2B;
+	word-wrap: break-word;
+}
+
+.clear-both-common {
+	clear: both;
+}
+
+.left-float-common {
+	float: left;
+}
+
+.right-float-common {
+	float: right;
+}
+
+.immediate-orders-holder {
+	line-height: 40px;
+}
+
+.immediate-orders-text {
+	font-size: 32px;	
+	font-weight: bold;
+}
+
+.immediate-orders-chip-button {
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+
+/* -------------------- Start - For New Board -------------------------- */
+
+.container.newboard-container .bet-info-pane {
+	overflow: auto;
+	padding: 15px;
+	min-height: 200px;
+}
+
+.component-box-holder { 
+    border: 2px double #000;
+    color: #000;
+    margin: 0 15px 15px 0;
+    text-align: center;
+    width: auto;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.component-boxes-holder {
+	margin: 10px;
+}
+
+.new-board-subtitle-common {
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+
+.container.newboard-container .section-button {
+	border-radius: 20px;
+    color: #000;
+    min-width: 120px;
+    line-height: 35px;
+    font-weight: 700;
+    background-color: #d0d27a;
+    margin-right: 10px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0px 15px;	
+}
+
+.container.newboard-container .color-input {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border: none;
+	box-shadow: none;
+	display: inline;
+	top: 0;
+	left: 0;
+	padding: 0px;
+	z-index: -1;
+}
+
+.container.newboard-container .component-box-holder {
+	position: relative;
+}
+
+.container.newboard-container .bet-new-table-col-common {
+	border: none;
+	background: #000000;
+	cursor: no-drop;
+}
+
+.container.newboard-container .blank-board-holder {
+	clear: both;
+	padding-top: 30px;
+}
+
+.container.newboard-container .bet-risk {
+	border: none;
+}
+
+.container.newboard-container .bet-risk-cell-0, 
+.container.newboard-container .bet-risk-cell-1 {
+	border: 1px solid #000000;
+}
+
+.container.newboard-container .bet-table-left-panel {
+	cursor: no-drop;
+}
+
+
+.container.newboard-container .bet-off-cls {
+	margin-right: 5px; 
+	padding-top: 145px; 
+	padding-left: 14px; 
+	margin-top: -62px;  
+	font-family: bold; 
+	font-size: 24px; 
+	font-weight: bold;
+}
+
+.bet-risk .empty-risk-cell {
+	border-right: 1px solid #000;
+}
+
+.newboard-perfchart-icon {
+	margin-left: 10px;
+}
+
+
+/* -------------------- End - For New Board -------------------------- */
+

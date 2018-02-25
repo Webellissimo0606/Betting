@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="tracker panel panel-default">
+    <h1>Register Now</h1>
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit" disabled="disabled"/>
+    </form>
+</div>
+
+{% endblock %} 

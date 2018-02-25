@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "firebase": "registry:npm/firebase#3.0.5+20160723033700"
+  },
+  "globalDependencies": {
+    "jquery": "registry:dt/jquery#1.10.0+20160929162922"
+  }
+}

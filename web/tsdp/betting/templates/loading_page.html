@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{%  block head %}
+    <title>Loading Board...</title>
+    <meta http-equiv="refresh" content="0; url=http://localhost:8000/board/" />
+{% endblock %}
+
+{% block content %}
+<base href="/">
+<img src="static/images/ajax-loading-large.gif">
+{% endblock %}
+
+

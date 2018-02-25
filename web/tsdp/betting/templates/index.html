@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+<base href="/">
+{% if user.is_authenticated %}
+    <h1>Please Choose from Menu</h1>
+{% else %}
+    <h1>Please login/Register</h1>
+{% endif %}
+
+
+{% endblock %}
+
+

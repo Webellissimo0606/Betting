@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{%  block head %}
+    <title>Global Systems Management</title>
+{% endblock %}
+
+{% block content %}
+<base href="/board">
+{% if user.is_authenticated %}
+    <bet-app><img src="static/images/ajax-loading-large.gif"></bet-app>
+    <script src="{% static 'js/libs.min.js' %}"></script>
+    <script src="{% static 'js/libsutil.min.js' %}"></script>
+    <script src="{% static 'js/bundle.min.js' %}"></script>
+{% else %}
+    <h1>Please login/Register</h1>
+{% endif %}
+
+
+{% endblock %}
+
+

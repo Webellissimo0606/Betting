@@ -1,0 +1,20 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+{% load tags %}
+
+{%  block head %}
+    <title>Debug Logs</title>
+{% endblock %}
+
+{% block content %}
+<base href="/">
+
+
+{% for logfile, obj in logfiles %}
+    <h1>{{ logfile }}</h1>
+     <p>
+       {{obj.display_text_file|linebreaks}}
+     </p>
+{% endfor %}
+
+{% endblock %}

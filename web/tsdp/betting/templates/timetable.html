@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load tags %}
+
+{%  block head %}
+    <title>Timetable</title>
+{% endblock %}
+
+{% block content %}
+<base href="/">
+<h1>Server Time: {{ time }}</h1>
+{% for name, data in timetable.items %}
+
+    <h1>{{name}}</h1>
+    {{data | safe}}
+
+{% endfor %}
+
+
+{% endblock %}

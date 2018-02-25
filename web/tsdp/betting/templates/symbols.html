@@ -1,0 +1,31 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<base href="/">
+<main class="container container--mw700">
+
+    {% for group, gvalues in groups.items %}
+        <h1>{{ group }} </h1>
+        <div class="row">
+        {% for symbol, value in gvalues.items %}
+
+            <div class="col-md-4">
+                <div>
+                    <a href="/{{ symbol }}/"> {{ value.Desc }} </a>
+                </div>
+                <div class="panel panel-default">
+                    <h2 class="panel-title">Currency: {{ value.Currency }}</h2>
+                    <h2 class="panel-title">Contract Size:{{ value.MultDesc }}</h2>
+                    <h2 class="panel-title">Exchange: {{ value.Exchange }}</h2>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:"3"%}
+            </div><br><div class="row">
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% endfor %}
+
+</main>
+{% endblock %}

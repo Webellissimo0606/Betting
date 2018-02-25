@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+<base href="/board">
+{% if user.is_authenticated %}
+    <bet-app>Loading...</bet-app>
+
+{% else %}
+    <h1>Please login/Register</h1>
+{% endif %}
+
+
+{% endblock %}
+
+
